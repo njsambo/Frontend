@@ -1,0 +1,240 @@
+/* Global Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa; /* Instagram's light background */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  animation: navbarSlideIn 1s forwards;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #ff3366;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-nav {
+  display: flex;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin: 0 20px;
+  color: #333;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.nav-link:hover {
+  color: #ff3366;
+  transform: scale(1.1);
+}
+
+.navbar-toggler {
+  background-color: #ff3366;
+}
+
+/* Main Content Styling */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 80px; /* Avoid navbar overlap */
+  text-align: center;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.section {
+  padding: 50px 30px;
+  margin-top: 80px;
+  border-radius: 10px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  transition: all 0.3s ease;
+  max-width: 900px;
+  margin: 100px auto;
+  opacity: 0;
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.section:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+p {
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  animation: textFadeIn 1s ease-in-out forwards;
+}
+
+/* Buttons */
+button {
+  background-color: #ff3366;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+button:hover {
+  background-color: #ff4d80;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.card {
+  background: linear-gradient(135deg, #ff3366, #ff4d80);
+  border-radius: 10px;
+  width: 25%;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #fff;
+}
+
+/* Animations */
+@keyframes navbarSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  h1, h2 {
+    font-size: 2.2rem;
+  }
+
+  button {
+    padding: 10px 25px;
+  }
+}
